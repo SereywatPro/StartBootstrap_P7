@@ -1,0 +1,452 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-darkgray: #212529;
+  --color-darkgreen: #1abc9c;
+  --color-darkblue: #2c3e50;
+}
+
+body {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Grid SYstem */
+.container {
+  width: 1320px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+.col-6 {
+  width: 50%;
+}
+.col-4 {
+  width: calc(100% / 3);
+}
+
+.mb-3 {
+  margin-bottom: 30px;
+}
+.f-wrap {
+  flex-wrap: wrap;
+  margin-inline: -20px;
+}
+.header {
+  background-color: var(--color-darkblue);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+ .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px;
+}
+.header a {
+  text-decoration: none;
+  display: inline-block;
+}
+.header .navbar .navbar-brand {
+  font-size: 20px;
+  font-weight: 900;
+  color: #fff;
+}
+.header .navbar .navbar-nav {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+.header .navbar .navbar-nav .nav-item .nav-link {
+  color: #fff;
+  font-weight: 600;
+  padding: 26px 20px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.header .navbar .navbar-nav .nav-item .nav-link:hover {
+  color: var(--color-darkgreen);
+}
+
+/* main */
+
+.banner-section {
+  background-color: var(--color-darkgreen);
+  height: 710px;
+}
+.banner-section .banner-content {
+  height: 710px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  /* border: 1px solid red; */
+  margin-top: 70px;
+}
+
+.banner-section .banner-img {
+  width: 240px;
+}
+.banner-section .banner-img img {
+  width: 100%;
+}
+
+.banner-section .banner-content p {
+  font-size: 65px;
+  font-weight: 800;
+}
+
+.fa-star {
+  font-size: 30px;
+}
+.banner-section .sub-title {
+  font-size: 22px;
+  font-weight: 500;
+}
+.container-star {
+  position: relative;
+  /* border: 1px solid red;     */
+}
+.length-left::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: -140px;
+  width: 120px;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.length-right::after {
+  content: "";
+  position: absolute;
+  top: 40%;
+  right: -140px;
+  width: 120px;
+  height: 4px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+/* Duplicate */
+
+.portfolio-section .container-star,
+.aboutUs-section .container-star,
+.contactMe-section .container-star {
+  position: relative;
+  /* border: 1px solid red; */
+  display: inline-block;
+}
+.portfolio-section .length-left::before,
+.aboutUs-section .length-left::before,
+.contactMe-section .length-left::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: -130px;
+  width: 110px;
+  height: 4px;
+  background-color: var(--color-darkblue);
+  border-radius: 10px;
+}
+.portfolio-section .length-left::after,
+.aboutUs-section .length-left::after,
+.contactMe-section .length-left::after {
+  content: "";
+  position: absolute;
+  top: 40%;
+  right: -130px;
+  width: 110px;
+  height: 4px;
+  background-color: var(--color-darkblue);
+  border-radius: 10px;
+}
+
+.portfolio-section .fa-star,
+.contactMe-section .fa-star {
+  color: var(--color-darkblue);
+}
+
+.aboutUs-section .length-left::before,
+.aboutUs-section .length-left::after {
+  background-color: #fff;
+}
+.aboutUs-section .fa-star {
+  color: #fff;
+}
+
+/* portfolio */
+
+.section-header {
+  text-align: center;
+  align-content: center;
+}
+.section-header .section-title {
+  margin-bottom: 30px;
+  font-size: 50px;
+  color: var(--color-darkblue);
+}
+
+.portfolio-section {
+  margin-top: 80px;
+}
+
+.portfolio-section [class*="col-4"] {
+  padding-inline: 20px;
+  margin-bottom: 40px;
+}
+
+.portfolio-section .section-body-port .port-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid red; */
+  border-radius: 8px;
+}
+.portfolio-section .section-body-port .port-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+.bg-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1abc9ce8;
+  opacity: 0;
+  transition: 0.3s;
+  border-radius: 8px;
+}
+.portfolio-section .section-body-port .port-img .fa-plus {
+  font-size: 60px;
+  font-weight: 600;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.portfolio-section .section-body-port .port-img:hover .bg-hover {
+  opacity: 1;
+}
+
+/*  AboutUs */
+
+.aboutUs-section {
+  margin-top: 96px;
+  background-color: var(--color-darkgreen);
+  height: 580px;
+  padding: 6rem 0;
+  color: #fff;
+}
+.aboutUs-section .section-header .section-title,
+.section-header .container-star {
+  color: #fff;
+}
+.aboutUs-section .section-body-aboutUs {
+  gap: 20px;
+}
+.aboutUs-section .section-body-aboutUs {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+}
+.aboutUs-section .section-body-aboutUs .paragraph-left {
+  padding-left: 190px;
+  margin-left: 20px;
+}
+.aboutUs-section .section-body-aboutUs .paragraph-right {
+  padding-right: 200px;
+  margin-right: 20px;
+}
+
+.aboutUs-section .btn-free-download {
+  display: flex;
+  justify-content: center;
+}
+
+.aboutUs-section .btn-free-download a {
+  font-size: 18px;
+  padding: 20px 30px;
+  border: 2px solid #fff;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.aboutUs-section .btn-free-download a:hover {
+  color: #212529;
+  background-color: #fff;
+}
+
+.aboutUs-section .btn-free-download .btn-txt {
+  margin-left: 10px;
+}
+
+/* contact me */
+
+.contactMe-section {
+  margin-top: 96px;
+  height: 800px;
+}
+
+.section-body-contactMe {
+  width: 60%;
+  /* border: 1px solid red; */
+  margin: 20px auto;
+}
+.form-control {
+  width: 100%;
+  padding: 25px 0;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid gray;
+  font-size: 20px;
+  z-index: 5;
+}
+.form-gp {
+  margin-bottom: 20px;
+  position: relative;
+}
+.contactMe-section label {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  font-size: 22px;
+  color: #646566;
+  transition: 0.1s ease-out;
+  font-weight: 500;
+  pointer-events: none;
+}
+.form-control:focus + label {
+  color: gray;
+  font-size: 14px;
+  left: 0;
+  top: -5px;
+}
+.contactMe-section .section-body-contactMe textarea {
+  resize: vertical;
+}
+
+.contactMe-section .btn .btn-submit {
+  padding: 20px 30px;
+  background-color: #86e7d4;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* footer */
+footer {
+  position: relative;
+  background-color: var(--color-darkblue);
+  color: #fff;
+  height: auto;
+  padding: 80px 250px 150px 250px;
+}
+
+footer h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+footer .location{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 100px;
+  text-align: center;
+  
+}
+
+footer .location span{
+  font-size: 20px;
+}
+
+
+footer .about-web .social-media-contact{
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  list-style-position: inside;
+  
+}
+footer .about-web .social-media-contact .list-icon-contact .link-social-contact{
+  color: #fff;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  text-decoration: none;
+  margin-right: 10px;
+  transition-duration: .2s;
+  transition-timing-function: linear;
+}
+footer .about-web .social-media-contact .list-icon-contact .link-social-contact:hover{
+  background-color: #fff;
+  color: #1A252F;
+}
+footer .about-web .icon-ab-web{
+  font-size: 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+footer .about-freelancer{
+  padding: 0 10px;
+}
+footer .about-freelancer p{
+  font-size: 18px;
+  text-align: center;
+}
+footer .about-freelancer .link-bootstrap{
+  color: var(--color-darkgreen);
+  text-decoration: underline 2px;
+  
+}
+footer .about-freelancer .link-bootstrap:hover{
+  color: #12856e;
+  
+}
+
+footer .location,
+footer .about-web,
+footer .about-freelancer{
+  line-height: 30px;
+}
+
+
+footer .copyright {
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #1A252F;
+  text-align: center;
+  align-content: center;
+  font-size: 13px;
+}
+
